@@ -1,6 +1,7 @@
 package dev.tauri.examplejsgaddon.jsgapi;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import dev.tauri.examplejsgaddon.ExampleJSGAddon;
 import dev.tauri.jsg.api.TextureOverlay;
 import dev.tauri.jsg.api.loader.holder.ExampleTextureOverlay;
 import net.minecraft.resources.ResourceLocation;
@@ -11,29 +12,30 @@ import java.util.List;
 import java.util.Map;
 
 public enum ExampleAddonModelsHolder {
-    EXAMPLE_MODEL("my_model.obj", "my_texture.obj", true);
+    EXAMPLE_MODEL("my_model.obj", "my_texture.png", true),
+    ANOTHER_EXAMPLE_MODEL("my_model_second.obj", "my_model_second.jpg", false);
 
     public final ResourceLocation model;
     public final Map<TextureOverlay, ResourceLocation> biomeTextureResourceMap = new HashMap<>();
     private final List<TextureOverlay> nonExistingReported = new ArrayList<>();
 
     ExampleAddonModelsHolder(String modelPath, String texturePath, boolean byOverlay) {
-        this.model = JSGAPIHandler.EXAMPLE_OBJ_LOADER.getModelResource(modelPath);
+        this.model = ExampleJSGAddon.JSG_API_HANDLER.EXAMPLE_OBJ_LOADER.getModelResource(modelPath);
         ExampleTextureOverlay[] overlays = ExampleTextureOverlay.values();
 
         for (ExampleTextureOverlay texOverlay : overlays) {
             if (!byOverlay) {
-                this.biomeTextureResourceMap.put(texOverlay, JSGAPIHandler.EXAMPLE_TEXTURE_LOADER.getTextureResource(texturePath));
+                this.biomeTextureResourceMap.put(texOverlay, ExampleJSGAddon.JSG_API_HANDLER.EXAMPLE_TEXTURE_LOADER.getTextureResource(texturePath));
             } else {
                 String[] split = texturePath.split("\\.");
-                this.biomeTextureResourceMap.put(texOverlay, JSGAPIHandler.EXAMPLE_TEXTURE_LOADER.getTextureResource(split[0] + texOverlay.getSuffix() + "." + split[1]));
+                this.biomeTextureResourceMap.put(texOverlay, ExampleJSGAddon.JSG_API_HANDLER.EXAMPLE_TEXTURE_LOADER.getTextureResource(split[0] + texOverlay.getSuffix() + "." + split[1]));
             }
         }
 
     }
 
     public void render(PoseStack ps) {
-        JSGAPIHandler.EXAMPLE_OBJ_LOADER.getModel(this.model).render(ps);
+        ExampleJSGAddon.JSG_API_HANDLER.EXAMPLE_OBJ_LOADER.getModel(this.model).render(ps);
     }
 
     public void bindTexture(TextureOverlay overlay) {
@@ -42,7 +44,7 @@ public enum ExampleAddonModelsHolder {
     }
 
     private void bindTexture(TextureOverlay overlay, ResourceLocation resourceLocation) {
-        if (!JSGAPIHandler.EXAMPLE_TEXTURE_LOADER.isTextureLoaded(resourceLocation)) {
+        if (!ExampleJSGAddon.JSG_API_HANDLER.EXAMPLE_TEXTURE_LOADER.isTextureLoaded(resourceLocation)) {
             if (!this.nonExistingReported.contains(overlay)) {
                 // doesn't exists
                 this.nonExistingReported.add(overlay);
@@ -51,7 +53,7 @@ public enum ExampleAddonModelsHolder {
             resourceLocation = this.biomeTextureResourceMap.get(ExampleTextureOverlay.NORMAL);
         }
 
-        JSGAPIHandler.EXAMPLE_TEXTURE_LOADER.getTexture(resourceLocation).bindTexture();
+        ExampleJSGAddon.JSG_API_HANDLER.EXAMPLE_TEXTURE_LOADER.getTexture(resourceLocation).bindTexture();
     }
 
     public void bindTextureAndRender(PoseStack ps) {

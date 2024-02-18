@@ -1,6 +1,7 @@
 package dev.tauri.examplejsgaddon;
 
 import com.mojang.logging.LogUtils;
+import dev.tauri.examplejsgaddon.jsgapi.JSGAPIHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -58,6 +59,10 @@ public class ExampleJSGAddon {
             .displayItems((parameters, output) -> {
                 output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
             }).build());
+
+
+    public static final JSGAPIHandler JSG_API_HANDLER = new JSGAPIHandler();
+
 
     public ExampleJSGAddon() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
