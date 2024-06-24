@@ -1,0 +1,20 @@
+
+{
+    "type": "crafting_shaped",
+    "pattern": [
+      "III",
+      " II",
+      "S I"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:stick"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "jsg:hammer"
+    }
+  }

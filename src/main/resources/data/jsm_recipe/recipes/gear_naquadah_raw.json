@@ -1,0 +1,17 @@
+
+{
+    "type": "crafting_shaped",
+    "pattern": [
+      " N ",
+      "N N",
+      " N "
+    ],
+    "key": {
+      "N": {
+        "item": "jsg:naquadah_alloy_raw"
+      }
+    },
+    "result": {
+      "item": "jsg:gear_naquadah_raw"
+    }
+  }

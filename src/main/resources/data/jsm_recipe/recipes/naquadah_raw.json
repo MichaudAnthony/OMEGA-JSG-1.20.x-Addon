@@ -1,0 +1,36 @@
+    {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+            {
+                "item": "minecraft:diamond"
+            },
+            {
+                "item": "minecraft:diamond"
+            },
+            {
+                "item": "minecraft:diamond"
+            },
+            {
+                "item": "minecraft:diamond"
+            },
+            {
+                "item": "minecraft:lapis_lazuli"
+            },
+            {
+                "item": "minecraft:diamond"
+            },
+            {
+                "item": "minecraft:diamond"
+            },
+            {
+                "item": "minecraft:diamond"
+            },
+            {
+                "item": "minecraft:diamond"
+            }
+        ],
+        "result": {
+            "item": "jsg:naquadah_raw",
+            "count": 5
+        }
+    }

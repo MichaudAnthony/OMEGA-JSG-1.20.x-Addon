@@ -29,8 +29,8 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ExampleJSGAddon.MODID)
-public class ExampleJSGAddon {
+@Mod(OMEGA_JSGAddon.MODID)
+public class OMEGA_JSGAddon {
 
     // Define mod id in a common place for everything to reference
     public static final String MODID = "ejsgaddon";
@@ -64,7 +64,7 @@ public class ExampleJSGAddon {
     public static final JSGAPIHandler JSG_API_HANDLER = new JSGAPIHandler();
 
 
-    public ExampleJSGAddon() {
+    public OMEGA_JSGAddon() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Register the commonSetup method for modloading

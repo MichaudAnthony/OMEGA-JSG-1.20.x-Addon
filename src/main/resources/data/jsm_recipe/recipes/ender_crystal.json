@@ -1,0 +1,20 @@
+
+{
+    "type": "crafting_shaped",
+    "pattern": [
+      " Q ",
+      "QWQ",
+      " Q "
+    ],
+    "key": {
+      "Q": {
+        "item": "minecraft:quartz"
+      },
+      "W": {
+        "item": "minecraft:ender_pearl"
+      }
+    },
+    "result": {
+      "item": "jsg:crystal_ender"
+    }
+  }
