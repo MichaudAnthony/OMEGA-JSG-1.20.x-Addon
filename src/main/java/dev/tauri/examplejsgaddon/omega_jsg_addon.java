@@ -29,11 +29,11 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(OMEGA_JSGAddon.MODID)
-public class OMEGA_JSGAddon {
+@Mod(omega_jsg_addon.MODID)
+public class omega_jsg_addon {
 
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "ejsgaddon";
+    public static final String MODID = "omega_jsg_addon";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "ejsgaddon" namespace
@@ -64,7 +64,7 @@ public class OMEGA_JSGAddon {
     public static final JSGAPIHandler JSG_API_HANDLER = new JSGAPIHandler();
 
 
-    public OMEGA_JSGAddon() {
+    public omega_jsg_addon() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Register the commonSetup method for modloading
