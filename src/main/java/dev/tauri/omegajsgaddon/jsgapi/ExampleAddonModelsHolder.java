@@ -1,7 +1,7 @@
-package dev.tauri.examplejsgaddon.jsgapi;
+package dev.tauri.omegajsgaddon.jsgapi;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import dev.tauri.examplejsgaddon.omega_jsg_addon;
+import dev.tauri.omegajsgaddon.omega_jsg_addon;
 import dev.tauri.jsg.api.TextureOverlay;
 import dev.tauri.jsg.api.loader.holder.ExampleTextureOverlay;
 import net.minecraft.resources.ResourceLocation;

@@ -1,6 +1,6 @@
-package dev.tauri.examplejsgaddon.jsgapi;
+package dev.tauri.omegajsgaddon.jsgapi;
 
-import dev.tauri.examplejsgaddon.omega_jsg_addon;
+import dev.tauri.omegajsgaddon.omega_jsg_addon;
 import dev.tauri.jsg.api.loader.model.APIOBJLoader;
 import dev.tauri.jsg.api.loader.texture.APITextureLoader;
 

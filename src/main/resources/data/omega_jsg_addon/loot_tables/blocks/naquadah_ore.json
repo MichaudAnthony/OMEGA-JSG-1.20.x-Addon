@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "omega_jsg_addon:blocks/naquadah_ore",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "jsg:naquadah_raw"
+        }
+      ]
+    }
+  ]
+}
